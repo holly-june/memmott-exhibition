@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Talan Memmott | Works on Screen, 1998-2016 | The NEXT</title>
+	<meta name="description"
+		content="An exhibition of 13 works of net art by Talan Memmott held by The NEXT, exploring the aesthetic of code, language, and code language. Curated by Dene Grigar. 28 March – 27 July 2026.">
+	<link rel="canonical" href="https://dtc-wsuv.org/electronic-literature-lab/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="icon" href="img/ell-logomark.ico" sizes="32x32">
+	<link rel="icon" href="img/ell-logomark.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="img/favicon.png">
+</head>
+
+<body>
+
+	<div class="bg-layer bg-grid" aria-hidden="true"></div>
+
+	<div class="bg-layer bg-text" aria-hidden="true">
+		<div class="bg-text-col" id="bg-col-0"></div>
+		<div class="bg-text-col" id="bg-col-1"></div>
+		<div class="bg-text-col" id="bg-col-2"></div>
+	</div>
+
+	<div class="bg-xy" aria-hidden="true">x,y</div>
+	<div class="bg-texture" aria-hidden="true"></div>
+
+	<header>
+		<div class="header-titles">
+			<h1>Talan Memmott</h1>
+			<p class="subtitle">works on screen, 1998-2016</p>
+		</div>
+		<button class="nav-arrow" id="next-btn" aria-label="Next work">&gt;&gt;</button>
+	</header>
+
+	<button class="menu-toggle" aria-controls="sidebar-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</button>
+
+	<div class="page-layout">
+
+		<nav id="sidebar-nav" class="sidebar-nav" aria-label="Exhibition works">
+			<ul role="list" id="works-nav-list"></ul>
+			<a href="https://the-next.eliterature.org" class="return-link" id="return-link">&lt;&lt; return to The
+				NEXT</a>
+		</nav>
+
+		<main id="main-content" class="main-content">
+			<div aria-live="polite" aria-atomic="true" class="sr-only" id="live-region"></div>
+			<article class="work-section" id="work-article" aria-labelledby="work-heading"></article>
+			<div class="persistent-footer">
+				<button id="eye-btn" class="eye-btn" aria-label="Toggle line" aria-pressed="false">
+					<img src="img/eye.png" alt="" class="footer-eye">
+				</button>
+			</div>
+		</main>
+
+	</div>
+
+	<script>
+		var works = [
+			{
+				id: 'curatorial-statement',
+				title: 'Curatorial Statement',
+				type: 'statement',
+				byline: 'Dr. Dene Grigar, Curator and Director, The NEXT',
+				body: [
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+					'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+					'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+					'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint.',
+					'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'
+				]
+			},
+			{
+				id: 'translucidity',
+				title: 'Translucidity',
+				type: 'work',
+				version: 'v1.1',
+				year: '2001',
+				platform: 'Flash',
+				languages: 'CSS, HTML, JavaScript',
+				format: 'Web',
+				publishedIn: 'frAme, Issue 6',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/2650/memmott-translucidity-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2650/memmott-translucidity-gallery-1.gif', alt: 'Gallery image 1 from Translucidity' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2650/memmott-translucidity-gallery-2.jpg', alt: 'Gallery image 2 from Translucidity' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2650/memmott-translucidity-gallery-3.jpg', alt: 'Gallery image 3 from Translucidity' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2650/memmott-translucidity-gallery-4.jpg', alt: 'Gallery image 4 from Translucidity' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/trace/preserved/frame/frame6/talan_fr.htm', label: 'Translucidity — view work', alt: 'Translucidity interactive work embedded' }
+				],
+				imageAlt: 'Translucidity — animated face and text interface from Talan Memmott\'s 2001 Flash work',
+				imageCaption: 'Screenshot of Translucidity (v1.1, 2001), published in frAme, Issue 6. Preserved with Ruffle.',
+				description: 'Translucidity is essentially an appendix to Lexia to Perplexia. Though both pieces deal with network phenomenology, where Lexia to Perplexia primarily deals with network attachment, Translucidity deals with issues of faciality.',
+				quoteSource: 'from ELMCIP.net'
+			},
+			{
+				id: 'lexia-to-perplexia',
+				title: 'Lexia to Perplexia',
+				type: 'work',
+				year: '2000',
+				platform: '—',
+				languages: 'CSS, DHTML, JavaScript',
+				format: 'Web',
+				publishedIn: 'The Iowa Review Web, Vol. 2',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/420/memmott-lexia-to-perplexia-gallery-1.jpg',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/420/memmott-lexia-to-perplexia-gallery-1.jpg', alt: 'Gallery image 1 from Lexia to Perplexia' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/420/memmott-lexia-to-perplexia-gallery-2.jpg', alt: 'Gallery image 2 from Lexia to Perplexia' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/420/memmott-lexia-to-perplexia-gallery-3.jpg', alt: 'Gallery image 3 from Lexia to Perplexia' },
+					{ type: 'vimeo', src: 'https://player.vimeo.com/video/1111438827?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1', label: 'Talan Memmott\'s "Lexia to Perplexia" (2000), performed by Memmott', alt: 'Traversal video of Lexia to Perplexia' }
+				],
+				imageAlt: 'Lexia to Perplexia — layered text and symbolic notation over a dark interface',
+				imageCaption: 'Screenshot of Lexia to Perplexia (2000), published in The Iowa Review Web.',
+				description: 'Lexia to Perplexia is a deconstructive/grammatological examination of the \'delivery machine.\' The text of the work falls into the gaps between theory and fiction. The work makes wide use of DHTML and JavaScript. At times its interactive features override the source text, leading to a fragmentary reading experience. In essence, the text does what it says: in that, certain theoretical attributes are not displayed as text but are incorporated into the functionality of the work. Additionally, Lexia to Perplexia explores new terms for the processes and phenomena of attachment. Terms such as \'metastrophe\' and \'intertimacy\' work as sparks within the piece and are meant to inspire further thought and exploration. There is also a play between the rigorous and the frivolous in this \'exe.termination of terms.\' The Lexia to Perplexia interface is designed as a diagrammatic metaphor, emphasizing the local (user) and remote (server) poles of network attachment while exploring the \'intertimate\' hidden spaces of the process.',
+				quoteSource: 'from <em>Electronic Literature Collection</em>, Volume 1'
+			},
+			{
+				id: 'toy-garbage',
+				title: 'Toy Garbage',
+				type: 'work',
+				year: '2011',
+				platform: '—',
+				languages: 'CSS, HTML, JavaScript',
+				format: 'Web',
+				publishedIn: 'Electronic Literature Collection, Vol. 3',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/822/memmott-toy-garbage-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/822/memmott-toy-garbage-gallery-1.gif', alt: 'Gallery image 1 from Toy Garbage' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/822/memmott-toy-garbage-gallery-2.jpg', alt: 'Gallery image 2 from Toy Garbage' },
+					{ type: 'iframe', src: 'https://collection.eliterature.org/3/work.html?work=toy-garbage', label: 'Toy Garbage — view work', alt: 'Toy Garbage interactive work embedded' }
+				],
+				imageAlt: 'Toy Garbage — generative text poem with capitalized toy names and darkly satirical phrases',
+				imageCaption: 'Screenshot of Toy Garbage (2011), published in Electronic Literature Collection, Vol. 3, 2016.',
+				description: 'Talan Memmott\'s remix of Taroko Gorge is at first startling to behold, relying on a pastel background of brightly-colored stripes and the infamous Comic Sans delivering poems about Barbies and Raggedy Ann. All of the letters are capitalized, creating a look that is reminiscent of an over-zealous marketing campaign or child-oriented website. This playful look is very different from most of the Taroko Gorge aesthetics, and serves as an appropriate aesthetic for a work that creates a virtual playroom of toxic, hazardous, and even destructive toys. Many of the toys referenced in the text are iconic (if not necessarily well-loved), from the early artificial life Furbies to the not-quite-Nintendo \'Pinkachus.\' This remix takes the reader on a journey far from the natural imagery of Montfort\'s original work.',
+				quoteSource: 'from <em>Electronic Literature Collection</em>, Volume 3'
+			},
+			{
+				id: 'reasoned-metagoria',
+				title: 'Reasoned Metagoria',
+				type: 'work',
+				year: '2000',
+				platform: '—',
+				languages: 'CSS, HTML, JavaScript',
+				format: 'Web',
+				publishedIn: 'frAme, Issue 3',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/335/memmott-reasoned-metagoria-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/335/memmott-reasoned-metagoria-gallery-1.gif', alt: 'Gallery image 1 from Reasoned Metagoria' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/335/memmott-reasoned-metagoria-gallery-2.jpg', alt: 'Gallery image 2 from Reasoned Metagoria' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/335/memmott-reasoned-metagoria-gallery-3.jpg', alt: 'Gallery image 3 from Reasoned Metagoria' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/335/memmott-reasoned-metagoria-gallery-4.jpg', alt: 'Gallery image 4 from Reasoned Metagoria' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/trace/original/frame3/metagoria/reasoned-metagoria/index.html', label: 'Reasoned Metagoria — view work', alt: 'Reasoned Metagoria interactive work embedded' }
+				],
+				imageAlt: 'Reasoned Metagoria — hypermedia essay interface with layered text and navigational elements',
+				imageCaption: 'Screenshot of Reasoned Metagoria (2000), published in frAme, Issue 3.',
+				description: 'Reasoned Metagoria is a hypermedia essay (touted by author Talan Memmott as "theory/fiction") that purports to be a "(mis)user\'s guide to the attached machine."',
+				quoteSource: 'from the work\'s title page'
+			},
+			{
+				id: 'lux-bronzino-1540',
+				title: 'LUX: Bronzino 1540',
+				type: 'work',
+				year: '2000',
+				platform: '—',
+				languages: 'CSS, HTML, JavaScript',
+				format: 'Web',
+				publishedIn: 'frAme, Issue 4',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/341/memmott-lux-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/341/memmott-lux-gallery-1.gif', alt: 'Gallery image 1 from LUX: Bronzino 1540' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/341/memmott-lux-gallery-2.jpg', alt: 'Gallery image 2 from LUX: Bronzino 1540' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/341/memmott-lux-gallery-3.jpg', alt: 'Gallery image 3 from LUX: Bronzino 1540' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/341/memmott-lux-gallery-4.jpg', alt: 'Gallery image 4 from LUX: Bronzino 1540' },
+					{ type: 'vimeo', src: 'https://player.vimeo.com/video/1113992288?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1', label: 'Talan Memmott\'s "LUX: Bronzino 1540" (2000), performed by Talan Memmott', alt: 'Traversal video of LUX: Bronzino 1540' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/trace/original/frame4/memmott/index.html', label: 'LUX: Bronzino 1540 — view work', alt: 'LUX: Bronzino 1540 interactive work embedded' }
+				],
+				imageAlt: 'LUX: Bronzino 1540 — animated hypermedia deconstruction of Bronzino\'s The Exposure of Luxury',
+				imageCaption: 'Screenshot of LUX: Bronzino 1540 (2000), published in frAme, Issue 4.',
+				description: 'LUX: Bronzino 1540 is a "hypermedia work, or ficto-crit[i]cal art history [that] deconstructs, contextualizes and manipulates the Bronzino painting, \'The Exposure of Luxury.\' The painting in its entirety is never viewable in the piece; rather, the contexts, characters, and insinuated actions of the painting are displaced and replaced by other contexts, both relevant and fanciful. From Greek Mythology and French Aristocratic Private Theater (salon) to the work of Bataille, Artaud, Fragonard, Watteau, Balthus, the piece touches upon diverse sources as it strives to produce a frivolous body of erotics."',
+				quoteSource: 'from <em>frAme</em>, Issue 4, 2000'
+			},
+			{
+				id: 'lollis-apartment',
+				title: "Lolli's Apartment",
+				type: 'work',
+				year: '2000',
+				platform: '—',
+				languages: '—',
+				format: 'Web',
+				publishedIn: 'Riding the Meridian',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/586/memmott-lollis-apartment-gallery-1.jpg',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/586/memmott-lollis-apartment-gallery-1.jpg', alt: "Gallery image 1 from Lolli's Apartment" },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/586/memmott-lollis-apartment-gallery-2.jpg', alt: "Gallery image 2 from Lolli's Apartment" },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/586/memmott-lollis-apartment-gallery-3.jpg', alt: "Gallery image 3 from Lolli's Apartment" },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/586/memmott-lollis-apartment-gallery-4.jpg', alt: "Gallery image 4 from Lolli's Apartment" },
+					{ type: 'vimeo', src: 'https://player.vimeo.com/video/1113991100?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1', label: 'Talan Memmott\'s "Lolli\'s Apartment" (2000), performed by Talan Memmott', alt: 'Traversal video of Lolli\'s Apartment' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/meridian/preserved/talan/rawmech-00.html', label: 'Lolli\'s Apartment — view work', alt: 'Lolli\'s Apartment interactive work embedded' }
+				],
+				imageAlt: "Lolli's Apartment — text-based navigable interior space from Memmott's 2000 web work",
+				imageCaption: "Screenshot of Lolli's Apartment (2000), published in Riding the Meridian.",
+				description: '"Lolli\'s Apartment" involves, as the artist says, "raw mechanics, estimated architecture, insinuated space, discovery, and what I can re-member."',
+				quoteSource: '"Introduction"'
+			},
+			{
+				id: 'jilt-a-romance',
+				title: 'Jilt; A Romance',
+				type: 'work',
+				year: '1998',
+				platform: '—',
+				languages: 'HTML, JavaScript',
+				format: 'Web',
+				publishedIn: 'BeeHive, Vol. 1, Issue 3',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/32/memmott-jilt-a-romance-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/32/memmott-jilt-a-romance-gallery-1.gif', alt: 'Gallery image 1 from Jilt; A Romance' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/32/memmott-jilt-a-romance-gallery-2.jpg', alt: 'Gallery image 2 from Jilt; A Romance' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/32/memmott-jilt-a-romance-gallery-3.jpg', alt: 'Gallery image 3 from Jilt; A Romance' },
+					{ type: 'vimeo', src: 'https://player.vimeo.com/video/1113989453?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1', label: 'Talan Memmott\'s "Jilt; A Romance" (1998), performed by Talan Memmott', alt: 'Traversal video of Jilt; A Romance' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/beehive/preserved/content_apps03/jilt_a_romance/app/app00.html', label: 'Jilt; A Romance — view work', alt: 'Jilt; A Romance interactive work embedded' }
+				],
+				imageAlt: 'Jilt; A Romance — spare HTML text work from 1998, one of Memmott\'s earliest published pieces',
+				imageCaption: 'Screenshot of Jilt; A Romance (1998), published in BeeHive, Vol. 1, Issue 3.',
+				description: '"This story is dedicated to no-one, least of all the muse - this text belongs to no-body. Speaking as not the author but the hero - I would hope to venomize the versified. I would hope to produce anxiety throughout the body of this Fury, Hope - a fear of illiterature (language shrunken to mere lexicon, or scattered vernacular...) (what will be written about, against...) (the subject consumes itself...). In this rat infested Pantheon I have seen the hash-cognac transformation of all poetry, the sleepwalking Dystopia and heavy-handed boredom. Hope can\'t stand it - pushing the words back into the poet\'s mouth."',
+				quoteSource: 'from the work\'s Introduction'
+			},
+			{
+				id: 'delimited-meshings',
+				title: 'Delimited Meshings',
+				type: 'work',
+				year: '2001',
+				platform: 'Flash',
+				languages: 'CSS, DHTML, JavaScript',
+				format: 'Web',
+				publishedIn: 'Cauldron & Net, Vol. 3, Issue 1',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-1.jpg',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-1.jpg', alt: 'Gallery image 1 from Delimited Meshings' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-2.jpg', alt: 'Gallery image 2 from Delimited Meshings' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-3.jpg', alt: 'Gallery image 3 from Delimited Meshings' }
+				],
+				imageAlt: 'Delimited Meshings — interactive flowchart and Venn diagram with clickable textual layers',
+				imageCaption: 'Screenshot of Delimited Meshings (2001), published in Cauldron & Net, Vol. 3, Issue 1.',
+				description: '"Delimited Meshings" is a hypertext work of poetry, theory, and narrative [that] is exquisitely programmed in HTML 3.2 using JavaScript from 12 years ago, which means that it is currently best read in Internet Explorer, which retains its responsive elements. This DHTML piece uses JavaScript to modify the Document Object Model (DOM), which means that the document is the same, but once you activate certain parts of it, its rendering becomes modified with the addition of static or kinetic elements.',
+				quoteSource: 'from <em>I Love E-Poetry</em>'
+			},
+			{
+				id: 'minute',
+				title: 'Minute',
+				type: 'work',
+				year: '1999',
+				platform: '—',
+				languages: '—',
+				format: 'Web',
+				publishedIn: 'Cauldron & Net, Vol. 1',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/258/memmott-minute-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/258/memmott-minute-gallery-1.gif', alt: 'Gallery image 1 from Minute' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/258/memmott-minute-gallery-2.jpg', alt: 'Gallery image 2 from Minute' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/258/memmott-minute-gallery-3.jpg', alt: 'Gallery image 3 from Minute' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/cauldronandnet/preserved/volume1/talanmemmott/minute.html', label: 'Minute — view work', alt: 'Minute interactive work embedded' }
+				],
+				imageAlt: 'Minute — timed web work tracking textual transformation across sixty seconds',
+				imageCaption: 'Screenshot of Minute (1999), published in Cauldron & Net, Vol. 1.',
+				description: '"Nostalgia as memory\'s capacity to diminish reason to the point of accepting the shortcomings and truncation of anachronistic simulation..."',
+				quoteSource: 'from the work, <em>talanmemmott.info</em>'
+			},
+			{
+				id: 'trimalchios-diet',
+				title: "Trimalchio's Diet",
+				type: 'work',
+				year: '1999',
+				platform: '—',
+				languages: 'HTML',
+				format: 'Web',
+				publishedIn: 'BeeHive, Vol. 2, Issue 2',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/71/memmott-trimalchios-diet-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/71/memmott-trimalchios-diet-gallery-1.gif', alt: "Gallery image 1 from Trimalchio's Diet" },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/71/memmott-trimalchios-diet-gallery-2.jpg', alt: "Gallery image 2 from Trimalchio's Diet" },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/71/memmott-trimalchios-diet-gallery-3.jpg', alt: "Gallery image 3 from Trimalchio's Diet" },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/beehive/preserved/content_apps22/trim/v3.html', label: 'Trimalchio\'s Diet — view work', alt: 'Trimalchio\'s Diet interactive work embedded' }
+				],
+				imageAlt: "Trimalchio's Diet — richly layered HTML work evoking the baroque excess of Petronius",
+				imageCaption: "Screenshot of Trimalchio's Diet (1999), published in BeeHive, Vol. 2, Issue 2.",
+				description: '"...the hyphenated glory of tonight\'s Trimalchian diet, the strand produced by the presence of the Dean."',
+				quoteSource: 'from the work, <em>talanmemmott.info</em>'
+			},
+			{
+				id: 'self-portrait',
+				title: 'Self Portrait(s) [as Other(s)]',
+				type: 'work',
+				year: '2003',
+				platform: '—',
+				languages: 'HTML',
+				format: 'Web',
+				publishedIn: 'The Iowa Review Web, Vol. 5',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/441/memmott-self-portrait-s-as-other-s-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/441/memmott-self-portrait-s-as-other-s-gallery-1.gif', alt: 'Gallery image 1 from Self Portrait(s) [as Other(s)]' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/441/memmott-self-portrait-s-as-other-s-gallery-2.jpg', alt: 'Gallery image 2 from Self Portrait(s) [as Other(s)]' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/441/memmott-self-portrait-s-as-other-s-gallery-3.jpg', alt: 'Gallery image 3 from Self Portrait(s) [as Other(s)]' },
+					{ type: 'iframe', src: 'https://collection.eliterature.org/1/works/memmott__self_portraits_as_others.html', label: 'Self Portrait(s) [as Other(s)] — view work', alt: 'Self Portrait(s) [as Other(s)] interactive work embedded' }
+				],
+				imageAlt: 'Self Portrait(s) [as Other(s)] — recombinant portrait generator mixing painted self-portraits and biographical texts',
+				imageCaption: 'Screenshot of Self Portrait(s) [as Other(s)] (2003), published in The Iowa Review Web, Vol. 5.',
+				description: 'Self Portrait(s) [as Other(s)] is a recombinant portrait and biography generator. The piece recombines the self-portraits of a dozen well-known painters as well as biographical text on each. Accordingly, the generated pictorial and textual portraits are no longer self portraits, but "selves" portraits, with subjects that are more than one. The piece deals with identity in an art-historical context, self-identity for any given artist, and identification as a process. There are over 120,000,000 possible recombinations.',
+				quoteSource: 'from author description, <em>Electronic Literature Collection</em>, Volume 1'
+			},
+			{
+				id: 'bread-crumbs',
+				title: 'Bread.Crumbs',
+				type: 'work',
+				year: '1998',
+				platform: '—',
+				languages: 'HTML',
+				format: 'Web',
+				publishedIn: 'BeeHive, Vol. 1, Issue 1',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/10/memmott-bread-crumbs-gallery-1.gif',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/10/memmott-bread-crumbs-gallery-1.gif', alt: 'Gallery image 1 from Bread.Crumbs' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/10/memmott-bread-crumbs-gallery-2.jpg', alt: 'Gallery image 2 from Bread.Crumbs' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/beehive/preserved/content_apps/bread/index.html', label: 'Bread.Crumbs — view work', alt: 'Bread.Crumbs interactive work embedded' }
+				],
+				imageAlt: 'Bread.Crumbs — sparse typographic layout of textual fragments across a browser window',
+				imageCaption: 'Screenshot of Bread.Crumbs (1998), published in BeeHive, Vol. 1, Issue 1.',
+				description: 'The (scratch) novel CRACKED EGGS AND WASTED TIME is very (very) loosely based in simultaneous (mis)readings of D. H. Lawrence\'s WOMEN IN LOVE and THE EGYPTIAN BOOK OF THE DEAD, commingled with other additional nonsense . . .',
+				quoteSource: 'from "Introduction"'
+			},
+			{
+				id: 'derivepedia',
+				title: 'Dérivepedia',
+				type: 'work',
+				year: '2016',
+				platform: '—',
+				languages: 'CSS, HTML5, JavaScript',
+				format: 'Web',
+				publishedIn: 'The New River, Spring 2016',
+
+				image: 'https://the-next.eliterature.org/img/database/versions/2209/memmott-derivepedia-gallery-1.jpg',
+				media: [
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2209/memmott-derivepedia-gallery-1.jpg', alt: 'Gallery image 1 from Dérivepedia' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2209/memmott-derivepedia-gallery-2.jpg', alt: 'Gallery image 2 from Dérivepedia' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2209/memmott-derivepedia-gallery-3.jpg', alt: 'Gallery image 3 from Dérivepedia' },
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/2209/memmott-derivepedia-gallery-4.jpg', alt: 'Gallery image 4 from Dérivepedia' },
+					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/newriver/preserved/spring-2016/derivepedia/index.html', label: 'Dérivepedia — view work', alt: 'Dérivepedia interactive work embedded' }
+				],
+				imageAlt: 'Dérivepedia — generative text interface recombining Wikipedia entries into specious encyclopedic prose',
+				imageCaption: 'Screenshot of Dérivepedia (2016), published in The New River.',
+				description: 'A "recyclopedic" generator of "contextually resistant associations," Dérivepedia is "a combinatory and recyclopedic text generator" created by hypermedia artist and writer Talan Memmott, that "recombines sentence fragments from 400 Wikipedia entries to generate specious entries for subjects ranging from Tadpoles And The History Of Weather Satellites To Pliny The Elder: Constructing Ambiguous Witch Trials; from Jimi Hendrix And The Psychology Of Cowpox To Ada Lovelace In The Age Of Cool-Weather Aromatherapy."',
+				quoteSource: 'from ELMCIP'
+			}
+		];
+
+		var currentIndex = 1;
+
+		var _article = document.getElementById('work-article');
+		var _liveRegion = document.getElementById('live-region');
+		var _nextBtn = document.getElementById('next-btn');
+		var _navList = document.getElementById('works-nav-list');
+
+		function esc(str) {
+			return String(str)
+				.replace(/&/g, '&amp;')
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;')
+				.replace(/"/g, '&quot;');
+		}
+
+		function renderWorkHTML(work) {
+			if (work.type === 'statement') {
+				return '<h2 id="work-heading" class="work-title">' + esc(work.title) + '</h2>' +
+					(work.byline ? '<p class="curatorial-byline">' + esc(work.byline) + '</p>' : '') +
+					'<div class="curatorial-body">' +
+					work.body.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
+					'<div class="curatorial-logos">' +
+					'<img src="img/the-next-logo-white.png" alt="The NEXT" class="curatorial-logo">' +
+					'<img src="img/ell-logo-white.png" alt="Electronic Literature Lab" class="curatorial-logo">' +
+					'<img src="img/washington-state-vancouver-logo-white.png" alt="Washington State University Vancouver" class="curatorial-logo">' +
+					'<img src="img/winona-state-logo-white.png" alt="Winona State University" class="curatorial-logo">' +
+					'</div>' +
+					'</div>';
+			}
+
+			var versionStr = work.version ? ' (' + esc(work.version) + ')' : '';
+			return '<h2 id="work-heading" class="work-title">' + esc(work.title) + versionStr + '</h2>' +
+				'<figure>' +
+				'<img class="work-image" src="' + esc(work.image) + '" alt="' + esc(work.imageAlt) + '">' +
+				'<figcaption class="sr-only">' + esc(work.imageCaption) + '</figcaption>' +
+				'</figure>' +
+				'<div class="work-lower">' +
+				'<div class="work-meta">' +
+				'<dl>' +
+				'<div class="meta-group"><dt>Year</dt><dd>' + esc(work.year) + '</dd></div>' +
+				'<div class="meta-group"><dt>Authoring Platform</dt><dd>' + esc(work.platform) + '</dd></div>' +
+				'<div class="meta-group"><dt>Computer Language(s)</dt><dd>' + esc(work.languages || '—') + '</dd></div>' +
+				'<div class="meta-group"><dt>Original Media Format</dt><dd>' + esc(work.format) + '</dd></div>' +
+				'<div class="meta-group"><dt>Published In</dt><dd>' + esc(work.publishedIn) + '</dd></div>' +
+				'</dl>' +
+				'</div>' +
+				'<div class="work-quote-area">' +
+				'<p class="work-description">' + esc(work.description) + '</p>' +
+				'<p class="work-quote-source">\u2014 ' + work.quoteSource + '</p>' +
+				'</div>' +
+				'</div>';
+		}
+
+		function buildNav() {
+			_navList.innerHTML = works.map(function (work, i) {
+				var isCurrent = i === currentIndex;
+				return '<li' + (isCurrent ? ' class="active"' : '') + '>' +
+					'<a href="#" data-index="' + i + '"' +
+					(isCurrent ? ' aria-current="true"' : '') +
+					'>' + esc(work.title) + (isCurrent ? ' &lt;' : '') + '</a></li>';
+			}).join('');
+		}
+
+		_navList.addEventListener('click', function (e) {
+			var link = e.target.closest('a[data-index]');
+			if (!link) return;
+			e.preventDefault();
+			(window.navigateTo || navigateTo)(parseInt(link.getAttribute('data-index'), 10));
+			menuToggle.setAttribute('aria-expanded', 'false');
+			sidebarNav.classList.remove('is-open');
+		});
+
+		function updateNav(index) {
+			_navList.querySelectorAll('li').forEach(function (li, i) {
+				var isCurrent = i === index;
+				var link = li.querySelector('a');
+				li.classList.toggle('active', isCurrent);
+				if (isCurrent) {
+					link.setAttribute('aria-current', 'true');
+				} else {
+					link.removeAttribute('aria-current');
+				}
+				link.textContent = works[i].title + (isCurrent ? ' <' : '');
+			});
+		}
+
+		function updateNextBtn(index) {
+			var next = index + 1;
+			if (next < works.length) {
+				_nextBtn.removeAttribute('disabled');
+				_nextBtn.setAttribute('aria-label', 'Next work: ' + works[next].title);
+			} else {
+				_nextBtn.setAttribute('disabled', '');
+				_nextBtn.setAttribute('aria-label', 'No further works');
+			}
+		}
+
+		function updateBgText(currentIdx) {
+			var pool = works.filter(function (w, i) {
+				return i !== currentIdx && w.type === 'work';
+			});
+			for (var i = pool.length - 1; i > 0; i--) {
+				var j = Math.floor(Math.random() * (i + 1));
+				var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+			}
+			[0, 1, 2].forEach(function (col) {
+				var el = document.getElementById('bg-col-' + col);
+				if (el && pool[col]) el.innerHTML = '<p>' + pool[col].description + '</p>';
+			});
+		}
+
+		function navigateTo(index) {
+			if (index < 0 || index >= works.length) return;
+			currentIndex = index;
+			updateBgText(index);
+
+			_article.classList.add('is-transitioning');
+
+			setTimeout(function () {
+				_article.innerHTML = renderWorkHTML(works[index]);
+				updateNav(index);
+				updateNextBtn(index);
+				_liveRegion.textContent = works[index].title + ' selected';
+				_article.classList.remove('is-transitioning');
+
+				var heading = document.getElementById('work-heading');
+				if (heading) {
+					heading.setAttribute('tabindex', '-1');
+					heading.focus({ preventScroll: true });
+				}
+			}, 180);
+		}
+
+		var menuToggle = document.querySelector('.menu-toggle');
+		var sidebarNav = document.getElementById('sidebar-nav');
+
+		menuToggle.addEventListener('click', function () {
+			var expanded = this.getAttribute('aria-expanded') === 'true';
+			this.setAttribute('aria-expanded', String(!expanded));
+			sidebarNav.classList.toggle('is-open', !expanded);
+		});
+
+		_nextBtn.addEventListener('click', function () {
+			if (currentIndex + 1 < works.length) (window.navigateTo || navigateTo)(currentIndex + 1);
+		});
+
+		buildNav();
+		navigateTo(currentIndex);
+	</script>
+
+	<div id="lightbox" role="dialog" aria-modal="true" aria-label="Fullscreen media view">
+		<div id="lb-media-wrap">
+			<img id="lb-img" src="" alt="">
+			<video id="lb-video" controls playsinline></video>
+			<iframe id="lb-iframe" src="" frameborder="0"
+				allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+				referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="">
+				<p class="lb-iframe-fallback">This work could not be embedded. It may be viewable directly at the
+					source.</p>
+			</iframe>
+		</div>
+		<button id="lb-prev" aria-label="Previous item">&#8249;</button>
+		<button id="lb-next" aria-label="Next item">&#8250;</button>
+		<nav id="lb-strip" aria-label="Media items"></nav>
+		<div id="lightbox-info">
+			<button id="lb-info-toggle" aria-label="Hide metadata" aria-expanded="true"></button>
+			<p id="lightbox-title"></p>
+			<dl id="lightbox-meta"></dl>
+		</div>
+		<button id="lightbox-close" aria-label="Close fullscreen view">×</button>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+		integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script>
+		(function () {
+			var lightbox = document.getElementById('lightbox');
+			var lbMediaWrap = document.getElementById('lb-media-wrap');
+			var lbImg = document.getElementById('lb-img');
+			var lbVideo = document.getElementById('lb-video');
+			var lbIframe = document.getElementById('lb-iframe');
+			var lbPrev = document.getElementById('lb-prev');
+			var lbNext = document.getElementById('lb-next');
+			var lbStrip = document.getElementById('lb-strip');
+			var lightboxInfo = document.getElementById('lightbox-info');
+			var lightboxTitle = document.getElementById('lightbox-title');
+			var lightboxMeta = document.getElementById('lightbox-meta');
+			var lightboxClose = document.getElementById('lightbox-close');
+			var sourceImg = null;
+			var isAnimating = false;
+			var mediaIndex = 0;
+			var activeWork = null;
+			var _mainContent = document.getElementById('main-content');
+			var _sidebarNav = document.getElementById('sidebar-nav');
+			var _reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+			function populateInfo(work) {
+				lightboxTitle.textContent = work.title + (work.version ? ' (' + work.version + ')' : '');
+				var fields = [
+					{ label: 'Year', value: work.year },
+					{ label: 'Authoring Platform', value: work.platform },
+					{ label: 'Computer Language(s)', value: work.languages || '—' },
+					{ label: 'Original Media Format', value: work.format },
+					{ label: 'Published In', value: work.publishedIn }
+				];
+				lightboxMeta.innerHTML = fields.map(function (f) {
+					return '<div class="lb-meta-group"><dt>' + f.label + '</dt><dd>' + f.value + '</dd></div>';
+				}).join('');
+			}
+
+			function updateArrows() {
+				var atStart = mediaIndex === 0;
+				var atEnd = mediaIndex === activeWork.media.length - 1;
+				gsap.to(lbPrev, { opacity: atStart ? 0.2 : 1, duration: 0.15 });
+				gsap.to(lbNext, { opacity: atEnd ? 0.2 : 1, duration: 0.15 });
+				lbPrev.disabled = atStart;
+				lbNext.disabled = atEnd;
+			}
+
+			function applyMedia(item) {
+				lbImg.style.display = 'none';
+				lbVideo.style.display = 'none';
+				lbIframe.style.display = 'none';
+				lbVideo.pause();
+				lbVideo.src = '';
+				lbIframe.src = '';
+
+				if (item.type === 'video') {
+					lbVideo.style.display = 'block';
+					lbVideo.src = item.src;
+					if (item.poster) lbVideo.poster = item.poster;
+					lbVideo.load();
+				} else if (item.type === 'vimeo' || item.type === 'iframe') {
+					lbIframe.style.display = 'block';
+					lbIframe.src = item.src;
+					lbIframe.title = item.label || item.alt || 'Work';
+					if (item.type === 'iframe') {
+						lbIframe.setAttribute('tabindex', '0');
+						lbIframe.addEventListener('load', function onLoad() {
+							lbIframe.focus({ preventScroll: true });
+							lbIframe.removeEventListener('load', onLoad);
+						});
+					}
+				} else {
+					lbImg.style.display = 'block';
+					lbImg.src = item.src;
+					lbImg.alt = item.alt || '';
+				}
+			}
+
+			function buildStrip() {
+				lbStrip.innerHTML = activeWork.media.map(function (item, i) {
+					var isTraversal = item.type === 'vimeo';
+					var isVideo = item.type === 'video';
+					var isWork = item.type === 'iframe';
+					var label = isTraversal ? 'Traversal' : (isWork ? 'View Work' : (isVideo ? 'Video ' + (i + 1) : 'Image ' + (i + 1)));
+					var icon = (isVideo || isTraversal) ? '▶' : (isWork ? '⇱' : '◼');
+					return '<button class="lb-strip-item" data-index="' + i + '" aria-label="' + label + '">'
+						+ '<span class="lb-strip-icon" aria-hidden="true">' + icon + '</span>'
+						+ '<span class="lb-strip-label">' + label + '</span>'
+						+ '</button>';
+				}).join('');
+			}
+
+			lbStrip.addEventListener('click', function (e) {
+				var btn = e.target.closest('.lb-strip-item');
+				if (btn) {
+					e.stopPropagation();
+					goTo(parseInt(btn.getAttribute('data-index'), 10));
+				}
+			});
+
+			function updateStrip() {
+				lbStrip.querySelectorAll('.lb-strip-item').forEach(function (btn, i) {
+					var active = i === mediaIndex;
+					btn.classList.toggle('is-active', active);
+					if (active) {
+						btn.setAttribute('aria-current', 'true');
+					} else {
+						btn.removeAttribute('aria-current');
+					}
+				});
+			}
+
+			function goTo(index) {
+				if (isAnimating || index < 0 || index >= activeWork.media.length) return;
+				gsap.killTweensOf(lbMediaWrap);
+				mediaIndex = index;
+				gsap.to(lbMediaWrap, {
+					opacity: 0, duration: 0.18,
+					onComplete: function () {
+						applyMedia(activeWork.media[mediaIndex]);
+						updateArrows();
+						updateStrip();
+						gsap.to(lbMediaWrap, { opacity: 1, duration: 0.18 });
+					}
+				});
+			}
+
+			function openLightbox(imgEl) {
+				if (isAnimating) return;
+				isAnimating = true;
+				sourceImg = imgEl;
+				activeWork = works[currentIndex];
+				mediaIndex = 0;
+
+				populateInfo(activeWork);
+				gsap.set(lbMediaWrap, { opacity: 1 });
+				applyMedia(activeWork.media[0]);
+				buildStrip();
+				updateStrip();
+
+				var rect = imgEl.getBoundingClientRect();
+				imgEl.style.opacity = '0';
+
+				var reduceMotion = _reduceMotion.matches;
+				gsap.set(lightbox, {
+					display: 'block',
+					left: reduceMotion ? 0 : rect.left,
+					top: reduceMotion ? 0 : rect.top,
+					width: reduceMotion ? window.innerWidth : rect.width,
+					height: reduceMotion ? window.innerHeight : rect.height
+				});
+				gsap.set([lightboxClose, lightboxInfo, lbPrev, lbNext, lbStrip], { opacity: 0 });
+				_mainContent.inert = true;
+				_sidebarNav.inert = true;
+				document.querySelector('header').inert = true;
+
+				gsap.to(lightbox, {
+					left: 0, top: 0,
+					width: window.innerWidth,
+					height: window.innerHeight,
+					duration: reduceMotion ? 0 : 0.55,
+					ease: 'power3.inOut',
+					onComplete: function () {
+						var hasMultiple = activeWork.media.length > 1;
+						gsap.to([lightboxInfo, lbStrip, lightboxClose], { opacity: 1, duration: 0.25, stagger: 0.05 });
+						gsap.to(lbPrev, { opacity: hasMultiple ? 0.2 : 0, duration: 0.25 });
+						gsap.to(lbNext, { opacity: hasMultiple ? 1 : 0, duration: 0.25 });
+						lightboxClose.focus();
+						isAnimating = false;
+					}
+				});
+			}
+
+			function closeLightbox() {
+				if (isAnimating || !sourceImg) return;
+				isAnimating = true;
+				lbVideo.pause();
+
+				_mainContent.inert = false;
+				_sidebarNav.inert = false;
+				document.querySelector('header').inert = false;
+
+				var rect = sourceImg.getBoundingClientRect();
+
+				gsap.to([lightboxClose, lightboxInfo, lbPrev, lbNext, lbStrip], {
+					opacity: 0, duration: 0.15,
+					onComplete: function () {
+						gsap.to(lightbox, {
+							left: rect.left, top: rect.top,
+							width: rect.width, height: rect.height,
+							duration: 0.5,
+							ease: 'power3.inOut',
+							onComplete: function () {
+								gsap.set(lightbox, { display: 'none' });
+								lbVideo.src = '';
+								lbIframe.src = '';
+								var returning = sourceImg;
+								if (returning) {
+									returning.style.opacity = '';
+									returning.focus({ preventScroll: true });
+								}
+								sourceImg = null;
+								activeWork = null;
+								isAnimating = false;
+							}
+						});
+					}
+				});
+			}
+
+			lbPrev.addEventListener('click', function (e) { e.stopPropagation(); goTo(mediaIndex - 1); });
+			lbNext.addEventListener('click', function (e) { e.stopPropagation(); goTo(mediaIndex + 1); });
+
+			lightboxClose.addEventListener('click', function (e) { e.stopPropagation(); closeLightbox(); });
+
+			lightbox.addEventListener('click', function (e) {
+				var skip = [lbVideo, lbPrev, lbNext, lightboxClose, lightboxInfo];
+				if (!skip.some(function (el) { return el.contains(e.target); })) closeLightbox();
+			});
+
+			document.addEventListener('keydown', function (e) {
+				if (!sourceImg) return;
+				if (e.key === 'Escape') closeLightbox();
+				if (e.key === 'ArrowLeft') goTo(mediaIndex - 1);
+				if (e.key === 'ArrowRight') goTo(mediaIndex + 1);
+			});
+
+			_article.addEventListener('click', function (e) {
+				if (e.target.classList.contains('work-image')) openLightbox(e.target);
+			});
+
+			var lbInfoToggle = document.getElementById('lb-info-toggle');
+			var lbInfoCollapsed = false;
+
+			lbInfoToggle.addEventListener('click', function (e) {
+				e.stopPropagation();
+				lbInfoCollapsed = !lbInfoCollapsed;
+				lightboxInfo.classList.toggle('is-collapsed', lbInfoCollapsed);
+				lbInfoToggle.setAttribute('aria-expanded', String(!lbInfoCollapsed));
+				lbInfoToggle.setAttribute('aria-label', lbInfoCollapsed ? 'Show metadata' : 'Hide metadata');
+				lbInfoToggle.classList.toggle('is-up', lbInfoCollapsed);
+			});
+
+			var _origNav = navigateTo;
+			window.navigateTo = function (index) {
+				if (sourceImg) {
+					lbVideo.pause();
+					lbVideo.src = '';
+					lbIframe.src = '';
+					gsap.set(lightbox, { display: 'none' });
+					sourceImg.style.opacity = '';
+					_mainContent.inert = false;
+					_sidebarNav.inert = false;
+					document.querySelector('header').inert = false;
+					sourceImg = null; activeWork = null; isAnimating = false;
+				}
+				_origNav(index);
+			};
+		}());
+	</script>
+
+
+	<div id="eye-line" aria-hidden="true"></div>
+
+	<script>
+		(function () {
+			var eyeBtn = document.getElementById('eye-btn');
+			var eyeLine = document.getElementById('eye-line');
+			var lineOpen = false;
+
+			function getEyeCenter() {
+				var rect = eyeBtn.getBoundingClientRect();
+				return {
+					x: rect.left + rect.width / 2,
+					y: rect.top + rect.height / 2
+				};
+			}
+
+			eyeBtn.addEventListener('click', function () {
+				var c = getEyeCenter();
+
+				// Position line: right edge anchored to eye, extends leftward; offset up/left
+				eyeLine.style.top = (c.y - 4) + 'px';
+				eyeLine.style.left = '0';
+				eyeLine.style.right = (window.innerWidth - c.x + 6) + 'px';
+
+				if (!lineOpen) {
+					lineOpen = true;
+					eyeBtn.setAttribute('aria-pressed', 'true');
+					gsap.set(eyeLine, { scaleX: 0, transformOrigin: 'right center', display: 'block' });
+					gsap.to(eyeLine, { scaleX: 1, duration: 0.65, ease: 'power3.out' });
+				} else {
+					lineOpen = false;
+					eyeBtn.setAttribute('aria-pressed', 'false');
+					gsap.to(eyeLine, {
+						scaleX: 0,
+						transformOrigin: 'right center',
+						duration: 0.45,
+						ease: 'power3.in',
+						onComplete: function () { gsap.set(eyeLine, { display: 'none' }); }
+					});
+				}
+			});
+		}());
+	</script>
+	<script src="https://player.vimeo.com/api/player.js"></script>
+</body>
+
+</html>
