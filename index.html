@@ -25,13 +25,8 @@
 		<div class="bg-text-col" id="bg-col-2"></div>
 	</div>
 
-	<article>
-		<div class="bg-xy" aria-hidden="true">x,y</div>
-		<div class="bg-texture" aria-hidden="true"></div>
-	</article>
-
-
-
+	<div class="bg-xy" aria-hidden="true">x,y</div>
+	<div class="bg-texture" aria-hidden="true"></div>
 
 	<header>
 		<div class="header-titles">
@@ -257,8 +252,7 @@
 				media: [
 					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-1.jpg', alt: 'Gallery image 1 from Delimited Meshings' },
 					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-2.jpg', alt: 'Gallery image 2 from Delimited Meshings' },
-					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-3.jpg', alt: 'Gallery image 3 from Delimited Meshings' },
-					{ type: 'iframe', src: 'https://archive.the-next.eliterature.org/cauldronandnet/preserved/volume3/confluence/talan_memmott/delimited_meshings/index.html', label: 'Delimited Meshings — view work', alt: 'Delimited Meshings interactive work embedded' }
+					{ type: 'image', src: 'https://the-next.eliterature.org/img/database/versions/308/memmott-delimited-meshings-gallery-3.jpg', alt: 'Gallery image 3 from Delimited Meshings' }
 				],
 				imageAlt: 'Delimited Meshings — interactive flowchart and Venn diagram with clickable textual layers',
 				imageCaption: 'Screenshot of Delimited Meshings (2001), published in Cauldron & Net, Vol. 3, Issue 1.',
@@ -573,6 +567,7 @@
 			var activeWork = null;
 			var _mainContent = document.getElementById('main-content');
 			var _sidebarNav = document.getElementById('sidebar-nav');
+			var _header = document.querySelector('header');
 			var _reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 			function populateInfo(work) {
@@ -705,7 +700,7 @@
 				gsap.set([lightboxClose, lightboxInfo, lbPrev, lbNext, lbStrip], { opacity: 0 });
 				_mainContent.inert = true;
 				_sidebarNav.inert = true;
-				document.querySelector('header').inert = true;
+				_header.inert = true;
 
 				gsap.to(lightbox, {
 					left: 0, top: 0,
@@ -731,7 +726,7 @@
 
 				_mainContent.inert = false;
 				_sidebarNav.inert = false;
-				document.querySelector('header').inert = false;
+				_header.inert = false;
 
 				var rect = sourceImg.getBoundingClientRect();
 
@@ -739,9 +734,11 @@
 					opacity: 0, duration: 0.15,
 					onComplete: function () {
 						gsap.to(lightbox, {
-							left: rect.left, top: rect.top,
-							width: rect.width, height: rect.height,
-							duration: 0.5,
+							left: _reduceMotion.matches ? 0 : rect.left,
+							top: _reduceMotion.matches ? 0 : rect.top,
+							width: _reduceMotion.matches ? window.innerWidth : rect.width,
+							height: _reduceMotion.matches ? window.innerHeight : rect.height,
+							duration: _reduceMotion.matches ? 0 : 0.5,
 							ease: 'power3.inOut',
 							onComplete: function () {
 								gsap.set(lightbox, { display: 'none' });
@@ -755,6 +752,13 @@
 								sourceImg = null;
 								activeWork = null;
 								isAnimating = false;
+								if (lbInfoCollapsed) {
+									lbInfoCollapsed = false;
+									lightboxInfo.classList.remove('is-collapsed');
+									lbInfoToggle.setAttribute('aria-expanded', 'true');
+									lbInfoToggle.setAttribute('aria-label', 'Hide metadata');
+									lbInfoToggle.classList.remove('is-up');
+								}
 							}
 						});
 					}
@@ -794,6 +798,20 @@
 				lbInfoToggle.classList.toggle('is-up', lbInfoCollapsed);
 			});
 
+			// Debounced resize: keep open lightbox filling the viewport
+			var _resizeTimer;
+			window.addEventListener('resize', function () {
+				if (!sourceImg) return;
+				clearTimeout(_resizeTimer);
+				_resizeTimer = setTimeout(function () {
+					gsap.set(lightbox, {
+						left: 0, top: 0,
+						width: window.innerWidth,
+						height: window.innerHeight
+					});
+				}, 100);
+			});
+
 			var _origNav = navigateTo;
 			window.navigateTo = function (index) {
 				if (sourceImg) {
@@ -804,7 +822,7 @@
 					sourceImg.style.opacity = '';
 					_mainContent.inert = false;
 					_sidebarNav.inert = false;
-					document.querySelector('header').inert = false;
+					_header.inert = false;
 					sourceImg = null; activeWork = null; isAnimating = false;
 				}
 				_origNav(index);
@@ -828,6 +846,17 @@
 					y: rect.top + rect.height / 2
 				};
 			}
+
+			var _eyeResizeTimer;
+			window.addEventListener('resize', function () {
+				if (!lineOpen) return;
+				clearTimeout(_eyeResizeTimer);
+				_eyeResizeTimer = setTimeout(function () {
+					var c = getEyeCenter();
+					eyeLine.style.top = (c.y - 4) + 'px';
+					eyeLine.style.right = (window.innerWidth - c.x + 6) + 'px';
+				}, 100);
+			});
 
 			eyeBtn.addEventListener('click', function () {
 				var c = getEyeCenter();
